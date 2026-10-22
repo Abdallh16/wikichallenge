@@ -2,70 +2,145 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="theme-color" content="#101827">
-<title>WikiChallenge</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="WikiChallenge — اختبر معلوماتك، افتح مستويات جديدة، ونافس أفضل نتيجة حققتها.">
+<title>WikiChallenge — تحدّي المعرفة</title>
 <style>
-:root{color-scheme:dark;--bg:#101827;--panel:#182337;--panel2:#202f47;--text:#f4f7fb;--muted:#aab8cc;--accent:#63e6be;--wrong:#ff7b86}
-*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at top,#203a55 0,#101827 55%);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;display:flex;justify-content:center;padding:18px}
-.app{width:100%;max-width:560px;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.brand{font-weight:900;font-size:20px;letter-spacing:.2px}.pill{background:#26364d;padding:8px 12px;border-radius:99px;color:var(--accent);font-weight:700;font-size:14px}
-.card{background:rgba(24,35,55,.96);border:1px solid #34435a;border-radius:24px;padding:22px;box-shadow:0 18px 50px #0003}
-.eyebrow{color:var(--accent);font-weight:800;font-size:13px;margin-bottom:12px}.hero{text-align:center;padding:28px 8px 20px}.emoji{font-size:54px}.hero h1{font-size:30px;margin:12px 0 8px}.hero p,.sub{color:var(--muted);line-height:1.7;margin:0 0 20px}
-.btn{border:0;border-radius:14px;padding:14px 16px;width:100%;font:inherit;font-weight:800;font-size:16px;cursor:pointer;transition:transform .12s,opacity .12s}.btn:active{transform:scale(.985)}.primary{background:var(--accent);color:#10251f}.secondary{background:var(--panel2);color:var(--text);border:1px solid #3a4b64}.options{display:grid;gap:10px;margin:20px 0}.option{text-align:right;background:#202f47;color:var(--text);border:1px solid #3a4b64;border-radius:14px;padding:14px;font:inherit;cursor:pointer;line-height:1.5}.option:disabled{cursor:default;opacity:1}.option.correct{border-color:var(--accent);background:#174538}.option.incorrect{border-color:var(--wrong);background:#4b2732}.meta{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin:14px 0 10px}.track{height:7px;background:#2a3950;border-radius:99px;overflow:hidden}.bar{height:100%;width:100%;background:var(--accent);transition:width .25s linear}.question{font-size:22px;line-height:1.5;margin:10px 0 0}.feedback{min-height:26px;font-weight:700;margin:6px 0 12px}.hidden{display:none!important}.result{text-align:center;padding:18px 4px}.result .score{font-size:52px;font-weight:900;color:var(--accent);margin:8px}.small{font-size:12px;color:var(--muted);text-align:center;margin-top:14px}
+:root{color-scheme:dark;--bg:#0b1020;--panel:#121b30;--panel2:#192640;--line:#293957;--text:#f4f7ff;--muted:#9eacc5;--mint:#69f0c1;--blue:#78a9ff;--gold:#ffd166;--red:#ff7d91;--radius:22px}
+*{box-sizing:border-box}html{min-height:100%;background:var(--bg)}body{margin:0;min-height:100vh;color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;background:radial-gradient(ellipse at 50% -10%,#203b64 0,transparent 45%),linear-gradient(160deg,#0b1020,#0e1629 60%,#0b1020);padding:clamp(12px,3.5vw,24px);display:flex;justify-content:center;align-items:center}
+button{font:inherit}button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}.app{width:100%;max-width:680px;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:18px;letter-spacing:.2px}.brand-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#6b8cff,#7358e8);box-shadow:0 8px 25px #4e64d344;font-size:22px}.top-right{display:flex;gap:8px;align-items:center}.chip{border:1px solid var(--line);background:#111b2e;border-radius:99px;padding:8px 11px;color:var(--muted);font-size:12px;white-space:nowrap}.chip b{color:var(--gold)}.panel{background:linear-gradient(155deg,#15213aee,#10192cee);border:1px solid #34425d;border-radius:var(--radius);padding:clamp(17px,4vw,28px);box-shadow:0 22px 70px #0004;overflow:hidden}.hidden{display:none!important}.hero{text-align:center;padding:8px 0 12px}.hero-orb{margin:0 auto 14px;width:86px;height:86px;border-radius:28px;display:grid;place-items:center;font-size:42px;background:radial-gradient(circle at 30% 20%,#9dbbff,#5d6de7 55%,#382e8b);box-shadow:0 15px 40px #5b62db55;transform:rotate(-4deg)}h1{font-size:clamp(27px,6vw,36px);margin:0 0 9px;letter-spacing:-.5px}.gradient{background:linear-gradient(90deg,#70f0c4,#8cb8ff);color:transparent;background-clip:text;-webkit-background-clip:text}.lead{color:var(--muted);line-height:1.8;margin:0 auto 22px;max-width:470px;font-size:14px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:18px 0 24px}.stat{padding:13px 8px;border:1px solid #2b3a56;background:#10192c;border-radius:16px;text-align:center}.stat strong{display:block;font-size:21px;color:var(--mint);margin-bottom:3px}.stat span{font-size:11px;color:var(--muted)}.section-title{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:18px 0 12px;font-weight:850}.section-title small{font-weight:500;color:var(--muted);font-size:11px}.levels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.level{position:relative;text-align:right;border:1px solid var(--line);background:#111b2f;color:var(--text);border-radius:18px;padding:14px 12px;cursor:pointer;min-width:0;transition:transform .15s,border-color .15s,background .15s}.level:hover{transform:translateY(-2px);border-color:#7088bb}.level.active{border-color:var(--mint);background:linear-gradient(150deg,#163d3a,#14283a);box-shadow:inset 0 0 0 1px #69f0c122}.level .level-icon{font-size:25px;display:block;margin-bottom:10px}.level strong{display:block;font-size:14px;margin-bottom:5px}.level span{display:block;color:var(--muted);font-size:11px;line-height:1.6}.level .selected{position:absolute;top:9px;left:9px;color:var(--mint);font-size:12px}.start-row{display:flex;gap:10px;margin-top:18px}.btn{border:0;border-radius:15px;padding:14px 16px;min-height:49px;cursor:pointer;font-weight:850;transition:transform .12s,filter .12s;display:inline-flex;justify-content:center;align-items:center;gap:8px}.btn:active{transform:scale(.985)}.btn:disabled{opacity:.45;cursor:not-allowed}.primary{background:linear-gradient(100deg,#72f0c4,#8ce9db);color:#0b2523;flex:1;box-shadow:0 8px 24px #69f0c122}.secondary{background:#202e48;color:var(--text);border:1px solid #3a4b69}.full{width:100%}.tiny-note{text-align:center;color:#6f819e;font-size:11px;margin:16px 0 0;line-height:1.7}
+.game-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}.stage-label{font-weight:900}.stage-label small{display:block;color:var(--muted);font-size:11px;margin-top:3px;font-weight:500}.game-tools{display:flex;gap:7px}.tool{background:#1c2a43;color:var(--text);border:1px solid #3a4b67;border-radius:12px;padding:9px 10px;font-size:12px;cursor:pointer}.tool:disabled{opacity:.35}.progress-line{height:7px;border-radius:99px;background:#26334b;overflow:hidden;margin-bottom:14px}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#69f0c1,#80aaff);border-radius:99px;transition:width .25s}.game-meta{display:flex;justify-content:space-between;gap:8px;color:var(--muted);font-size:12px;margin-bottom:16px}.game-meta b{color:var(--text)}.timer{display:flex;align-items:center;gap:6px}.timer.urgent{color:var(--red)}.timer.urgent b{color:var(--red)}.question-card{padding:19px 17px;background:linear-gradient(145deg,#1a2944,#152137);border:1px solid #314361;border-radius:18px}.category{font-size:11px;color:var(--mint);font-weight:800;margin-bottom:12px}.question{font-size:clamp(20px,5vw,25px);line-height:1.65;margin:0;font-weight:850}.answers{display:grid;gap:10px;margin:15px 0}.answer{display:flex;align-items:center;gap:12px;width:100%;text-align:right;color:var(--text);background:#152138;border:1px solid #31415e;border-radius:15px;padding:13px 14px;cursor:pointer;min-height:58px;line-height:1.5;transition:background .15s,border-color .15s}.answer-letter{flex-shrink:0;width:30px;height:30px;display:grid;place-items:center;border-radius:10px;background:#243552;color:#c5d3ea;font-size:12px;font-weight:900}.answer.correct{border-color:var(--mint);background:#133c35}.answer.correct .answer-letter{background:var(--mint);color:#082a22}.answer.wrong{border-color:var(--red);background:#422332}.answer.wrong .answer-letter{background:var(--red);color:#34101a}.answer:disabled{cursor:default}.feedback{border-radius:14px;padding:12px 14px;line-height:1.75;font-size:13px;margin-bottom:12px;background:#101a2c;color:var(--muted);border:1px solid #2b3b56;min-height:50px}.feedback.good{border-color:#286d5b;color:#b4ffe3}.feedback.bad{border-color:#754051;color:#ffc0ca}.next-row{display:flex;gap:9px}.next-row .btn{flex:1}.hint{color:#71829d;font-size:11px;text-align:center;margin-top:13px}
+.result{text-align:center}.result-icon{font-size:58px;margin:4px 0 12px}.result-score{font-size:clamp(42px,10vw,62px);font-weight:950;letter-spacing:-2px;color:var(--mint);margin:8px 0}.result-sub{color:var(--muted);line-height:1.8;margin:0 auto 18px;max-width:420px}.result-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0}.result-stat{padding:12px 6px;background:#10192b;border:1px solid #2a3954;border-radius:14px}.result-stat strong{display:block;font-size:19px;margin-bottom:4px}.result-stat span{font-size:10px;color:var(--muted)}.record{padding:12px;background:#3b321c;border:1px solid #65552c;color:#ffe5a1;border-radius:14px;margin-bottom:16px;font-size:13px}.review{margin:18px 0 0;text-align:right}.review summary{cursor:pointer;color:var(--muted);font-weight:800;padding:10px 0}.review-item{padding:12px 0;border-bottom:1px solid #293650;line-height:1.7;font-size:13px}.review-item strong{display:block;margin-bottom:4px}.review-item span{color:var(--mint)}.footer{text-align:center;color:#667793;font-size:10px;padding:14px 0 2px}
+@media(max-width:420px){.top{align-items:flex-start}.brand{font-size:16px}.chip{padding:7px 9px;font-size:11px}.levels{gap:7px}.level{padding:12px 9px}.level strong{font-size:12px}.level span{font-size:10px}.game-tools{gap:5px}.tool{padding:8px 7px;font-size:11px}.game-meta{font-size:11px}.answer{padding:11px}.stats{gap:7px}.stat strong{font-size:19px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 <main class="app">
-  <div class="top"><div class="brand">🧠 WikiChallenge</div><div class="pill">تحدّي معلوماتك</div></div>
-  <section id="start" class="card">
+  <header class="top">
+    <div class="brand"><div class="brand-icon">🧠</div><span>Wiki<span class="gradient">Challenge</span></span></div>
+    <div class="top-right"><div class="chip">🏆 أفضل نتيجة <b id="topBest">0</b></div></div>
+  </header>
+
+  <section id="home" class="panel">
     <div class="hero">
-      <div class="emoji">🌍</div>
-      <h1>جاهز للتحدّي؟</h1>
-      <p>اختبر معلوماتك في العلوم والتاريخ والجغرافيا والتكنولوجيا. جاوب صح واجمع أكبر عدد من النقاط!</p>
-      <button class="btn primary" id="startBtn">ابدأ اللعب 🚀</button>
+      <div class="hero-orb">⚡</div>
+      <h1>قدّ إيه <span class="gradient">معلوماتك قوية؟</span></h1>
+      <p class="lead">تحدّى نفسك في جولات سريعة، اجمع النقاط، حافظ على سلسلة الإجابات الصح، واثبت إنك تستحق لقب أسطورة المعرفة.</p>
     </div>
+    <div class="stats">
+      <div class="stat"><strong id="statPlayed">0</strong><span>جولات لعبتها</span></div>
+      <div class="stat"><strong id="statCorrect">0</strong><span>إجابات صحيحة</span></div>
+      <div class="stat"><strong id="statBestStreak">0</strong><span>أطول سلسلة صح</span></div>
+    </div>
+    <div class="section-title">اختار مستوى التحدّي <small>كل مستوى أصعب من اللي قبله</small></div>
+    <div class="levels" id="levels">
+      <button class="level active" data-level="1"><span class="selected">✓</span><span class="level-icon">🌱</span><strong>المبتدئ</strong><span>10 أسئلة · 15 ثانية</span></button>
+      <button class="level" data-level="2"><span class="selected hidden">✓</span><span class="level-icon">🔥</span><strong>المحترف</strong><span>10 أسئلة · 12 ثانية</span></button>
+      <button class="level" data-level="3"><span class="selected hidden">✓</span><span class="level-icon">👑</span><strong>الأسطوري</strong><span>10 أسئلة · 10 ثواني</span></button>
+    </div>
+    <div class="start-row"><button class="btn primary" id="startBtn">ابدأ التحدّي <span>←</span></button></div>
+    <p class="tiny-note">🎯 3 مستويات · مساعدتان في كل جولة · حفظ أفضل نتائجك على جهازك</p>
   </section>
-  <section id="game" class="card hidden">
-    <div class="eyebrow" id="category">سؤال معلومات عامة</div>
-    <div class="track"><div class="bar" id="timeBar"></div></div>
-    <div class="meta"><span id="progress">السؤال 1 من 10</span><span>⏱️ <b id="time">15</b> ثانية</span><span>⭐ <b id="score">0</b></span></div>
-    <h2 class="question" id="question"></h2>
-    <div class="options" id="options"></div>
-    <div class="feedback" id="feedback" aria-live="polite"></div>
-    <button class="btn secondary hidden" id="nextBtn">السؤال التالي ←</button>
+
+  <section id="game" class="panel hidden">
+    <div class="game-head">
+      <div class="stage-label"><span id="stageName">🌱 المبتدئ</span><small id="stageSub">جولة المعرفة</small></div>
+      <div class="game-tools"><button class="tool" id="fiftyBtn">✂️ 50:50 <b>1</b></button><button class="tool" id="skipBtn">⏭ تخطّي <b>1</b></button></div>
+    </div>
+    <div class="progress-line"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="game-meta"><span id="progressText">السؤال 1 / 10</span><span class="timer" id="timerBox">⏱ <b id="timeText">15</b> ثانية</span><span>⭐ <b id="scoreText">0</b></span></div>
+    <article class="question-card"><div class="category" id="categoryText">علوم</div><h2 class="question" id="questionText">السؤال</h2></article>
+    <div class="answers" id="answers"></div>
+    <div class="feedback hidden" id="feedback" aria-live="polite"></div>
+    <div class="next-row"><button class="btn primary hidden" id="nextBtn">السؤال التالي ←</button><button class="btn secondary hidden" id="quitBtn">إنهاء الجولة</button></div>
+    <p class="hint">الإجابة الصحيحة بتضيف نقاط، والإجابة السريعة بتكسبك نقاط إضافية ⚡</p>
   </section>
-  <section id="result" class="card hidden">
+
+  <section id="result" class="panel hidden">
     <div class="result">
-      <div class="emoji">🏆</div><h1>خلصت التحدّي!</h1>
-      <div class="score" id="finalScore">0/100</div>
-      <p class="sub" id="resultText"></p>
-      <button class="btn primary" id="againBtn">العب تاني 🔄</button>
+      <div class="result-icon" id="resultIcon">🏆</div><h1 id="resultTitle">أداء رائع!</h1>
+      <div class="result-score" id="finalScore">0</div>
+      <p class="result-sub" id="resultText"></p>
+      <div class="result-stats">
+        <div class="result-stat"><strong id="correctCount">0/10</strong><span>إجابات صحيحة</span></div>
+        <div class="result-stat"><strong id="accuracy">0%</strong><span>نسبة الدقة</span></div>
+        <div class="result-stat"><strong id="finalStreak">0</strong><span>أفضل سلسلة</span></div>
+      </div>
+      <div id="recordBanner" class="record hidden">✨ رقم قياسي جديد! دي أفضل نتيجة ليك في المستوى ده.</div>
+      <div class="start-row"><button class="btn primary" id="againBtn">العب تاني 🔄</button><button class="btn secondary" id="homeBtn">الرئيسية</button></div>
+      <details class="review"><summary>راجع إجابات الجولة 📘</summary><div id="reviewList"></div></details>
     </div>
   </section>
-  <div class="small">WikiChallenge • لعبة تجريبية مستقلة</div>
+  <footer class="footer">WIKICHALLENGE · KNOW MORE. GO FURTHER.</footer>
 </main>
 <script>
-const questions = [
- {c:"جغرافيا",q:"ما أكبر كوكب في المجموعة الشمسية؟",a:["الأرض","المشتري","زحل","المريخ"],correct:1,why:"المشتري هو أكبر كواكب المجموعة الشمسية."},
- {c:"علوم",q:"ما الغاز الذي تمتصه النباتات غالبًا من الهواء أثناء البناء الضوئي؟",a:["الأكسجين","النيتروجين","ثاني أكسيد الكربون","الهيدروجين"],correct:2,why:"تستخدم النباتات ثاني أكسيد الكربون مع الماء والضوء."},
- {c:"تاريخ",q:"أين تقع أهرامات الجيزة؟",a:["مصر","العراق","المغرب","اليونان"],correct:0,why:"تقع أهرامات الجيزة في مصر قرب القاهرة."},
- {c:"فضاء",q:"ما النجم الأقرب إلى الأرض؟",a:["الشعرى اليمانية","الشمس","نجم القطب","منكب الجوزاء"],correct:1,why:"الشمس هي أقرب نجم إلى الأرض."},
- {c:"تكنولوجيا",q:"ماذا تعني الأحرف WWW؟",a:["World Wide Web","Wide World Window","Web World Wire","World Web Work"],correct:0,why:"هي اختصار World Wide Web."},
- {c:"جغرافيا",q:"ما المحيط الأكبر على الأرض؟",a:["الأطلسي","الهندي","المتجمد الشمالي","الهادئ"],correct:3,why:"المحيط الهادئ هو الأكبر مساحة."},
- {c:"علوم",q:"كم عدد أضلاع الشكل السداسي؟",a:["خمسة","ستة","سبعة","ثمانية"],correct:1,why:"الشكل السداسي له ستة أضلاع."},
- {c:"أدب",q:"من كتب مسرحية روميو وجولييت؟",a:["تشارلز ديكنز","ويليام شكسبير","فيكتور هوغو","مارك توين"],correct:1,why:"كتبها الكاتب المسرحي الإنجليزي ويليام شكسبير."},
- {c:"جسم الإنسان",q:"أي عضو يضخ الدم إلى أنحاء الجسم؟",a:["الرئة","الكبد","القلب","المعدة"],correct:2,why:"القلب يضخ الدم عبر الدورة الدموية."},
- {c:"رياضيات",q:"ما ناتج 9 × 8؟",a:["63","72","81","64"],correct:1,why:"تسعة في ثمانية تساوي 72."}
+const BANK = [
+{d:1,c:"علوم",q:"ما الغاز الذي تمتصه النباتات غالبًا أثناء البناء الضوئي؟",a:["الأكسجين","ثاني أكسيد الكربون","الهيدروجين","الهيليوم"],k:1,w:"تستخدم النباتات ثاني أكسيد الكربون والماء لصنع الغذاء باستخدام ضوء الشمس."},
+{d:1,c:"فضاء",q:"ما أقرب نجم إلى كوكب الأرض؟",a:["الشمس","الشعرى اليمانية","نجم القطب","سيريوس ب"],k:0,w:"الشمس هي أقرب نجم إلينا، وتبعد نحو 150 مليون كيلومتر."},
+{d:1,c:"جغرافيا",q:"ما أكبر محيط على سطح الأرض؟",a:["الأطلسي","الهندي","الهادئ","المتجمد الشمالي"],k:2,w:"المحيط الهادئ هو الأكبر مساحةً بين محيطات العالم."},
+{d:1,c:"تاريخ",q:"في أي دولة تقع أهرامات الجيزة؟",a:["المكسيك","مصر","العراق","السودان"],k:1,w:"تقع أهرامات الجيزة في مصر على هضبة الجيزة قرب القاهرة."},
+{d:1,c:"جسم الإنسان",q:"أي عضو يضخ الدم إلى أنحاء الجسم؟",a:["الرئة","الكبد","القلب","المعدة"],k:2,w:"يضخ القلب الدم عبر الأوعية الدموية إلى أعضاء الجسم."},
+{d:1,c:"رياضيات",q:"ما ناتج 9 × 8؟",a:["63","72","81","64"],k:1,w:"تسعة في ثمانية تساوي 72."},
+{d:1,c:"تكنولوجيا",q:"إلى ماذا يشير الاختصار WWW؟",a:["World Wide Web","Wide World Window","Web Wire World","World Web Work"],k:0,w:"يشير إلى World Wide Web، أي الشبكة العنكبوتية العالمية."},
+{d:1,c:"حيوانات",q:"أي حيوان يُعرف بأنه أكبر حيوان على الأرض؟",a:["الفيل الأفريقي","الزرافة","الحوت الأزرق","القرش الأبيض"],k:2,w:"الحوت الأزرق هو أكبر حيوان معروف، وقد يتجاوز طوله 30 مترًا."},
+{d:1,c:"أدب",q:"من كتب مسرحية روميو وجولييت؟",a:["فيكتور هوغو","ويليام شكسبير","تشارلز ديكنز","مارك توين"],k:1,w:"كتبها الكاتب المسرحي الإنجليزي ويليام شكسبير."},
+{d:1,c:"علوم",q:"كم عدد أضلاع الشكل السداسي؟",a:["خمسة","ستة","سبعة","ثمانية"],k:1,w:"الشكل السداسي له ستة أضلاع."},
+{d:1,c:"علوم",q:"ما الحالة التي يتحول فيها الماء عند درجة صفر مئوية تقريبًا؟",a:["إلى بخار","إلى جليد","إلى ملح","إلى أكسجين"],k:1,w:"يتجمد الماء النقي عند صفر مئوية في الظروف القياسية."},
+{d:1,c:"جغرافيا",q:"ما عاصمة اليابان؟",a:["بكين","سيول","طوكيو","بانكوك"],k:2,w:"طوكيو هي عاصمة اليابان وأكبر مراكزها الحضرية."},
+{d:1,c:"رياضة",q:"كم لاعبًا من فريق واحد يكون داخل الملعب في كرة القدم؟",a:["9","10","11","12"],k:2,w:"يتكون الفريق من 11 لاعبًا داخل الملعب، بمن فيهم حارس المرمى."},
+{d:1,c:"علوم",q:"أي كوكب يُعرف بالكوكب الأحمر؟",a:["الزهرة","المريخ","عطارد","نبتون"],k:1,w:"يبدو المريخ أحمر بسبب أكاسيد الحديد في تربته."},
+{d:1,c:"ثقافة",q:"ما اللغة الرسمية الأساسية في البرازيل؟",a:["الإسبانية","البرتغالية","الفرنسية","الإنجليزية"],k:1,w:"البرتغالية هي اللغة الرسمية في البرازيل."},
+{d:2,c:"فضاء",q:"ما اسم المجرة التي تقع فيها المجموعة الشمسية؟",a:["أندروميدا","درب التبانة","مجرة المثلث","سحابة ماجلان"],k:1,w:"تقع المجموعة الشمسية في مجرة درب التبانة."},
+{d:2,c:"علوم",q:"ما الرمز الكيميائي للحديد؟",a:["Ir","Fe","In","Fi"],k:1,w:"الرمز Fe مأخوذ من الاسم اللاتيني للحديد Ferrum."},
+{d:2,c:"تاريخ",q:"في أي عام انتهت الحرب العالمية الثانية؟",a:["1939","1942","1945","1948"],k:2,w:"انتهت الحرب العالمية الثانية عام 1945."},
+{d:2,c:"جغرافيا",q:"ما أعلى جبل في العالم فوق مستوى سطح البحر؟",a:["كي 2","إيفرست","كليمنجارو","مون بلان"],k:1,w:"يُعد جبل إيفرست الأعلى فوق مستوى سطح البحر."},
+{d:2,c:"تكنولوجيا",q:"أي لغة تُستخدم أساسًا لتنسيق مظهر صفحات الويب؟",a:["HTML","CSS","SQL","Bash"],k:1,w:"تتحكم CSS في الألوان والتخطيط والخطوط ومظهر عناصر الصفحة."},
+{d:2,c:"علوم",q:"ما الوحدة الأساسية لقياس شدة التيار الكهربائي؟",a:["الفولت","الأوم","الأمبير","الواط"],k:2,w:"الأمبير هو وحدة قياس شدة التيار الكهربائي في النظام الدولي."},
+{d:2,c:"أدب",q:"من مؤلف رواية البؤساء؟",a:["فيكتور هوغو","ألبير كامو","بلزاك","إميل زولا"],k:0,w:"رواية البؤساء من أشهر أعمال الكاتب الفرنسي فيكتور هوغو."},
+{d:2,c:"جغرافيا",q:"ما الدولة التي تُعرف بأنها تضم أكبر عدد من الأهرامات القديمة؟",a:["مصر","السودان","المكسيك","اليونان"],k:1,w:"يضم السودان أهرامات نوبية كثيرة، ويتجاوز عددها أهرامات مصر."},
+{d:2,c:"علوم",q:"أي فيتامين يستطيع الجسم إنتاجه بمساعدة ضوء الشمس؟",a:["فيتامين A","فيتامين C","فيتامين D","فيتامين B12"],k:2,w:"يساعد تعرض الجلد للأشعة فوق البنفسجية B على إنتاج فيتامين D."},
+{d:2,c:"تاريخ",q:"ما الحضارة القديمة المرتبطة بالكتابة المسمارية؟",a:["السومرية","الرومانية","الفينيقية","المايا"],k:0,w:"طوّر السومريون الكتابة المسمارية في بلاد الرافدين."},
+{d:2,c:"رياضيات",q:"كم يساوي مجموع زوايا المثلث في الهندسة الإقليدية؟",a:["90 درجة","180 درجة","270 درجة","360 درجة"],k:1,w:"مجموع الزوايا الداخلية لأي مثلث في الهندسة الإقليدية يساوي 180 درجة."},
+{d:2,c:"جسم الإنسان",q:"ما أكبر عضو داخلي صلب في جسم الإنسان؟",a:["القلب","الدماغ","الكبد","الرئة"],k:2,w:"الكبد هو أكبر عضو داخلي صلب في جسم الإنسان."},
+{d:2,c:"تكنولوجيا",q:"ماذا تعني CPU في الحاسوب؟",a:["وحدة معالجة مركزية","ذاكرة تخزين","بطاقة رسومات","نظام تشغيل"],k:0,w:"CPU اختصار لوحدة المعالجة المركزية التي تنفذ التعليمات والعمليات."},
+{d:2,c:"علوم",q:"ما قيمة الرقم الهيدروجيني pH للماء النقي تقريبًا عند 25 درجة مئوية؟",a:["3","5","7","10"],k:2,w:"يكون الماء النقي متعادلًا تقريبًا عند pH يساوي 7."},
+{d:2,c:"فضاء",q:"أي كوكب يشتهر بحلقاته الواسعة والواضحة؟",a:["المريخ","زحل","عطارد","الأرض"],k:1,w:"زحل أشهر الكواكب بحلقاته الواسعة المكونة أساسًا من الجليد والصخور."},
+{d:3,c:"فيزياء",q:"ما سرعة الضوء في الفراغ تقريبًا؟",a:["30 ألف كم/ث","150 ألف كم/ث","300 ألف كم/ث","3 ملايين كم/ث"],k:2,w:"تبلغ سرعة الضوء في الفراغ نحو 299,792 كيلومترًا في الثانية."},
+{d:3,c:"علوم",q:"ما الجسيم ذو الشحنة الكهربائية السالبة في الذرة؟",a:["البروتون","النيوترون","الإلكترون","الفوتون"],k:2,w:"يحمل الإلكترون شحنة سالبة، بينما يحمل البروتون شحنة موجبة."},
+{d:3,c:"تاريخ",q:"أي معاهدة ارتبطت رسميًا بإنهاء الحرب العالمية الأولى مع ألمانيا؟",a:["فرساي","فيينا","أوتريخت","توردسيلاس"],k:0,w:"وُقّعت معاهدة فرساي عام 1919 بين ألمانيا والحلفاء."},
+{d:3,c:"تكنولوجيا",q:"ما البنية الأساسية التي يستخدمها بيتكوين لتسجيل المعاملات؟",a:["قاعدة بيانات مركزية","سلسلة الكتل","شبكة الهاتف","نظام ملفات تقليدي"],k:1,w:"تستخدم بيتكوين سلسلة كتل موزعة للتحقق من المعاملات وتسجيلها."},
+{d:3,c:"فلك",q:"ما اسم الحد الذي لا يستطيع الضوء بعد تجاوزه الهروب من الثقب الأسود؟",a:["الأفق الحدثي","الغلاف الضوئي","الحزام الكويكبي","خط الاستواء"],k:0,w:"أفق الحدث هو الحد الذي تصبح بعده سرعة الإفلات المطلوبة أكبر من سرعة الضوء."},
+{d:3,c:"كيمياء",q:"ما العدد الذري للكربون؟",a:["4","6","8","12"],k:1,w:"العدد الذري للكربون هو 6، أي أن نواته تحتوي على ستة بروتونات."},
+{d:3,c:"جغرافيا",q:"ما المضيق الذي يفصل بين آسيا وأمريكا الشمالية؟",a:["جبل طارق","البوسفور","بيرينغ","ملقا"],k:2,w:"يفصل مضيق بيرينغ بين أقصى شرق روسيا وألاسكا."},
+{d:3,c:"رياضيات",q:"ما العدد الأولي الوحيد الزوجي؟",a:["0","1","2","4"],k:2,w:"العدد 2 أولي وله قاسمان موجبان فقط: 1 و2، وهو زوجي."},
+{d:3,c:"أحياء",q:"ما العضيّة المسؤولة عن إنتاج معظم الطاقة القابلة للاستخدام في الخلية؟",a:["الريبوسوم","الميتوكوندريا","جهاز جولجي","النواة"],k:1,w:"تنتج الميتوكوندريا معظم ATP في كثير من الخلايا حقيقية النواة."},
+{d:3,c:"علوم",q:"ما اسم العملية التي تتحول فيها المادة من الحالة الصلبة إلى الغازية مباشرة؟",a:["التكاثف","التسامي","التجمد","الانصهار"],k:1,w:"التسامي هو انتقال المادة من الصلب إلى الغاز دون المرور بالحالة السائلة."},
+{d:3,c:"تاريخ",q:"أي عالم ارتبط بقوانين الحركة الثلاثة؟",a:["نيوتن","داروين","باستور","فاراداي"],k:0,w:"صاغ إسحاق نيوتن قوانين الحركة الثلاثة التي تُعد أساسًا في الميكانيكا الكلاسيكية."},
+{d:3,c:"تكنولوجيا",q:"ما وظيفة DNS الأساسية على الإنترنت؟",a:["تشفير كل الملفات","تحويل أسماء النطاقات إلى عناوين IP","زيادة سعة البطارية","ضغط الصور"],k:1,w:"يساعد DNS على ترجمة أسماء النطاقات التي يسهل تذكرها إلى عناوين IP."},
+{d:3,c:"كيمياء",q:"ما أكثر عنصر وفرة في الكون من حيث الكتلة؟",a:["الأكسجين","الكربون","الهيدروجين","الحديد"],k:2,w:"الهيدروجين هو العنصر الأكثر وفرة في الكون."},
+{d:3,c:"علوم",q:"ما المبدأ الذي ينص على استحالة تحديد موضع الجسيم وكمية حركته بدقة مطلقة في آن واحد؟",a:["مبدأ أرخميدس","مبدأ عدم اليقين لهايزنبرغ","قانون أوم","مبدأ باولي فقط"],k:1,w:"مبدأ عدم اليقين لهايزنبرغ من المبادئ الأساسية في ميكانيكا الكم."}
 ];
-let order=[],index=0,score=0,locked=false,timer=null,remaining=15;
+const LEVELS={1:{name:"🌱 المبتدئ",time:15,points:10},2:{name:"🔥 المحترف",time:12,points:15},3:{name:"👑 الأسطوري",time:10,points:20}};
 const $=id=>document.getElementById(id);
-function show(id){["start","game","result"].forEach(x=>$(x).classList.toggle("hidden",x!==id))}
-function startGame(){clearInterval(timer);order=[...questions].sort(()=>Math.random()-.5);index=0;score=0;show("game");renderQuestion()}
-function renderQuestion(){locked=false;remaining=15;const item=order[index];$("category").textContent="📚 "+item.c;$("question").textContent=item.q;$("progress").textContent=`السؤال ${index+1} من ${order.length}`;$("score").textContent=score;$("time").textContent=remaining;$("timeBar").style.width="100%";$("feedback").textContent="";$("nextBtn").classList.add("hidden");$("options").innerHTML="";
- item.a.forEach((answer,i)=>{const b=document.createElement("button");b.className="option";b.textContent=String.fromCharCode(0x0661+i)+". "+answer;b.onclick=()=>choose(i);$("options").appendChild(b)});clearInterval(timer);timer=setInterval(()=>{remaining--;$("time").textContent=remaining;$("timeBar").style.width=(remaining/15*100)+"%";if(remaining<=0){clearInterval(timer);if(!locked)choose(-1)}},1000)}
-function choose(choice){if(locked)return;locked=true;clearInterval(timer);const item=order[index];[...$("options").children].forEach((b,i)=>{b.disabled=true;if(i===item.correct)b.classList.add("correct");if(i===choice&&choice!==item.correct)b.classList.add("incorrect")});if(choice===item.correct){score+=10;$("feedback").textContent="إجابة صحيحة! +10 نقاط 🎉";$("feedback").style.color="var(--accent)"}else{$("feedback").textContent=choice===-1?"انتهى الوقت! ⏰ "+item.why:"مش هي دي 😅 "+item.why;$("feedback").style.color="var(--wrong)"}$("score").textContent=score;$("nextBtn").textContent=index===order.length-1?"عرض النتيجة 🏆":"السؤال التالي ←";$("nextBtn").classList.remove("hidden")}
-function next(){if(index<order.length-1){index++;renderQuestion()}else{clearInterval(timer);show("result");$("finalScore").textContent=score+"/100";$("resultText").textContent=score>=80?"ممتاز! معلوماتك قوية جدًا 🔥":score>=50?"شغل حلو! جرّب مرة تانية لتحسّن نتيجتك 💪":"بداية كويسة! العب تاني وشوف هتجيب كام 😎"}}
-$("startBtn").onclick=startGame;$("nextBtn").onclick=next;$("againBtn").onclick=startGame;
+let selectedLevel=1,deck=[],pos=0,score=0,correct=0,streak=0,bestStreak=0,remaining=15,timer=null,locked=false,usedFifty=false,usedSkip=false,review=[];
+const readStats=()=>{try{return JSON.parse(localStorage.getItem("wikichallenge_stats")||'{"played":0,"correct":0,"bestStreak":0,"best":{"1":0,"2":0,"3":0}}')}catch(e){return {played:0,correct:0,bestStreak:0,best:{"1":0,"2":0,"3":0}}}};
+let stats=readStats();
+function saveStats(){try{localStorage.setItem("wikichallenge_stats",JSON.stringify(stats))}catch(e){}}
+function refreshStats(){$("topBest").textContent=Math.max(stats.best["1"]||0,stats.best["2"]||0,stats.best["3"]||0);$("statPlayed").textContent=stats.played||0;$("statCorrect").textContent=stats.correct||0;$("statBestStreak").textContent=stats.bestStreak||0}
+function show(id){["home","game","result"].forEach(x=>$(x).classList.toggle("hidden",x!==id));window.scrollTo({top:0,behavior:"smooth"})}
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+document.querySelectorAll(".level").forEach(b=>b.addEventListener("click",()=>{selectedLevel=Number(b.dataset.level);document.querySelectorAll(".level").forEach(x=>{x.classList.toggle("active",x===b);x.querySelector(".selected").classList.toggle("hidden",x!==b)})}));
+function startGame(){clearInterval(timer);deck=shuffle(BANK.filter(q=>q.d===selectedLevel)).slice(0,10);pos=0;score=0;correct=0;streak=0;bestStreak=0;usedFifty=false;usedSkip=false;review=[];$("fiftyBtn").disabled=false;$("skipBtn").disabled=false;$("fiftyBtn").innerHTML="✂️ 50:50 <b>1</b>";$("skipBtn").innerHTML="⏭ تخطّي <b>1</b>";$("stageName").textContent=LEVELS[selectedLevel].name;$("stageSub").textContent="جولة المعرفة · "+LEVELS[selectedLevel].points+" نقطة لكل إجابة";show("game");renderQuestion()}
+function renderQuestion(){locked=false;remaining=LEVELS[selectedLevel].time;const q=deck[pos];$("categoryText").textContent="✦ "+q.c;$("questionText").textContent=q.q;$("progressText").textContent="السؤال "+(pos+1)+" / "+deck.length;$("timeText").textContent=remaining;$("scoreText").textContent=score;$("timerBox").classList.remove("urgent");$("progressFill").style.width=(pos/deck.length*100)+"%";$("feedback").className="feedback hidden";$("feedback").textContent="";$("nextBtn").classList.add("hidden");$("quitBtn").classList.remove("hidden");$("answers").innerHTML="";q.a.forEach((ans,i)=>{const b=document.createElement("button");b.className="answer";b.dataset.index=i;const letter=document.createElement("span");letter.className="answer-letter";letter.textContent=["أ","ب","ج","د"][i];const text=document.createElement("span");text.textContent=ans;b.append(letter,text);b.addEventListener("click",()=>answer(i,"pick"));$("answers").appendChild(b)});clearInterval(timer);timer=setInterval(()=>{remaining--;if(remaining<0)remaining=0;$("timeText").textContent=remaining;$("timerBox").classList.toggle("urgent",remaining<=4);if(remaining<=0&&!locked)answer(-1,"time")},1000)}
+function answer(choice,mode){if(locked)return;locked=true;clearInterval(timer);const q=deck[pos],isCorrect=choice===q.k;let gained=0;if(isCorrect){streak++;bestStreak=Math.max(bestStreak,streak);correct++;gained=LEVELS[selectedLevel].points+Math.min(streak-1,5)*2+Math.floor(remaining/3);score+=gained}else{streak=0}const buttons=[...$("answers").children];buttons.forEach((b,i)=>{b.disabled=true;const ix=Number(b.dataset.index);if(ix===q.k)b.classList.add("correct");if(ix===choice&&!isCorrect)b.classList.add("wrong")});const fb=$("feedback");fb.classList.remove("hidden");fb.classList.toggle("good",isCorrect);fb.classList.toggle("bad",!isCorrect);fb.innerHTML="";const title=document.createElement("strong");title.textContent=isCorrect?"إجابة صحيحة! +"+gained+" نقطة 🎉":mode==="time"?"الوقت خلص ⏰":mode==="skip"?"تم تخطي السؤال ⏭":"مش الإجابة الصحيحة 😅";const explanation=document.createElement("div");explanation.textContent=(isCorrect?"سلسلة الإجابات الصح: "+streak+" 🔥":("الإجابة الصحيحة: "+q.a[q.k]+" — "))+q.w;fb.append(title,explanation);$("scoreText").textContent=score;$("progressFill").style.width=((pos+1)/deck.length*100)+"%";$("nextBtn").textContent=pos===deck.length-1?"عرض النتيجة 🏆":"السؤال التالي ←";$("nextBtn").classList.remove("hidden");$("quitBtn").classList.add("hidden");review.push({q:q.q,a:q.a[q.k],ok:isCorrect,why:q.w})}
+function useFifty(){if(usedFifty||locked)return;usedFifty=true;$("fiftyBtn").disabled=true;const q=deck[pos];let removed=0;[...$("answers").children].forEach((b,i)=>{if(i!==q.k&&removed<2){b.disabled=true;b.style.visibility="hidden";removed++}})}
+function useSkip(){if(usedSkip||locked)return;usedSkip=true;$("skipBtn").disabled=true;answer(-1,"skip")}
+function nextQuestion(){if(pos<deck.length-1){pos++;renderQuestion()}else finishGame()}
+function finishGame(){clearInterval(timer);stats.played=(stats.played||0)+1;stats.correct=(stats.correct||0)+correct;stats.bestStreak=Math.max(stats.bestStreak||0,bestStreak);const oldBest=stats.best[String(selectedLevel)]||0;const isRecord=score>oldBest;stats.best[String(selectedLevel)]=Math.max(oldBest,score);saveStats();refreshStats();$("finalScore").textContent=score;$("correctCount").textContent=correct+"/"+deck.length;$("accuracy").textContent=Math.round(correct/deck.length*100)+"%";$("finalStreak").textContent=bestStreak;$("recordBanner").classList.toggle("hidden",!isRecord);let icon="💪",title="محاولة كويسة!",message="كل جولة بتزوّد معرفتك. راجع الإجابات وجرّب تاني لتحطّم رقمك.";if(correct>=9){icon="👑";title="أسطورة المعرفة!";message="أداء استثنائي! تركيزك ومعلوماتك في مستوى عالي جدًا."}else if(correct>=7){icon="🔥";title="أداء ممتاز!";message="إنت قريب جدًا من القمة. كام إجابة كمان وهتبقى أسطورة."}else if(correct>=5){icon="⚡";title="شغل محترم!";message="عندك أساس كويس، وشرح الإجابات هيساعدك تتقدم بسرعة."}$("resultIcon").textContent=icon;$("resultTitle").textContent=title;$("resultText").textContent=message+" حققت "+correct+" إجابة صحيحة من "+deck.length+".";const list=$("reviewList");list.innerHTML="";review.forEach((r,i)=>{const item=document.createElement("div");item.className="review-item";const strong=document.createElement("strong");strong.textContent=(i+1)+". "+r.q;const answer=document.createElement("span");answer.textContent="الإجابة: "+r.a+(r.ok?" ✓":"");const why=document.createElement("div");why.textContent=r.why;item.append(strong,answer,why);list.appendChild(item)});$("progressFill").style.width="100%";show("result")}
+$("startBtn").addEventListener("click",startGame);$("nextBtn").addEventListener("click",nextQuestion);$("fiftyBtn").addEventListener("click",useFifty);$("skipBtn").addEventListener("click",useSkip);$("againBtn").addEventListener("click",startGame);$("homeBtn").addEventListener("click",()=>{clearInterval(timer);refreshStats();show("home")});$("quitBtn").addEventListener("click",()=>{clearInterval(timer);refreshStats();show("home")});
+refreshStats();
 </script>
 </body>
 </html>
